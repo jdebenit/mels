@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap');
+
+:root {
+  --color-bg: #050505;
+  --color-text: #e0e0e0;
+  --color-accent: #00ff41; /* CRT Green */
+  --color-secondary: #ffb000; /* Amber warning */
+  --color-alert: #ff3333;
+  --color-panel: #111;
+  
+  --font-mono: 'Share Tech Mono', monospace;
+  --font-heading: 'Orbitron', sans-serif;
+  
+  --scanline-color: rgba(0, 0, 0, 0.5);
+  --grid-color: rgba(0, 255, 65, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Background Grid Effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(transparent 95%, var(--grid-color) 95%),
+    linear-gradient(90deg, transparent 95%, var(--grid-color) 95%);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* CRT Scanline Effect */
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    var(--scanline-color) 50%,
+    var(--scanline-color)
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.15;
+}
+
+/* Vignette */
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, transparent 60%, black 100%);
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* Utility Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-accent);
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  box-shadow: 0 0 15px var(--color-accent);
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+
+.text-glitch:hover {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  color: var(--color-alert);
+}
+
+/* Redacted Text */
+.redacted {
+  background: var(--color-text);
+  color: var(--color-text);
+  cursor: help;
+  transition: all 0.3s ease;
+}
+
+.redacted:hover {
+  background: transparent;
+  color: var(--color-secondary);
+}
+
+/* Panel/Card Style */
+.panel {
+  border: 1px solid var(--color-accent);
+  background: rgba(0, 20, 0, 0.6);
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
+  backdrop-filter: blur(2px);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  box-shadow: 0 0 20px var(--color-accent);
+}

@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Top Secret Clearance Required" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <div class="crt-overlay"></div>
+        <div class="vignette"></div>
+
+        <main class="container">
+            <slot />
+        </main>
+
+        <!-- Footer / Status Bar -->
+        <footer
+            style="position: fixed; bottom: 0; left: 0; width: 100%; padding: 10px; background: rgba(0,0,0,0.8); border-top: 1px solid var(--color-accent); font-size: 0.8rem; z-index: 100; display: flex; justify-content: space-between;"
+        >
+            <span
+                >STATUS: <span style="color: var(--color-accent)"
+                    >CONNECTED</span
+                ></span
+            >
+            <span
+                >ENCRYPTION: <span style="color: var(--color-secondary)"
+                    >AES-4096</span
+                ></span
+            >
+            <span>IP: <span class="redacted">192.168.0.X</span></span>
+        </footer>
+    </body>
+</html>

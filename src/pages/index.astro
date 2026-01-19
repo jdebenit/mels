@@ -1,16 +1,219 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="MELS // SYSTEM ACCESS">
+	<div class="hero">
+		<div class="logo-container">
+			<img
+				src="/mutantes-en-la-sombra.png"
+				alt="Mutantes en la Sombra"
+				class="main-logo"
+			/>
+			<div class="scan-line"></div>
+		</div>
+
+		<div class="protocol-badge">
+			<img src="/Mutant3s-fiht-protocol.png" alt="Fight Protocol" />
+			<p>
+				CLEARANCE: <span style="color: var(--color-alert)"
+					>LEVEL 5</span>
+			</p>
+		</div>
+
+		<div class="panel login-panel">
+			<h2>&gt; SYSTEM_LOGIN</h2>
+			<p>ENTER CREDENTIALS TO ACCESS DATABASE.</p>
+
+			<div class="terminal-output">
+				<p>> CONNECTING TO SECURE SERVER...</p>
+				<p>
+					> <span style="color: var(--color-accent)"
+						>CONNECTION ESTABLISHED.</span>
+				</p>
+				<p>> VERIFYING BIOMETRICS...</p>
+				<p>> <span class="text-glitch">ACCESS GRANTED</span>.</p>
+				<br />
+				<p>WARNING: UNAUTHORIZED ACCESS IS A FELONY.</p>
+			</div>
+
+			<div class="actions">
+				<a href="#" class="btn">ENTER</a>
+				<a
+					href="#"
+					class="btn"
+					style="border-color: var(--color-alert); color: var(--color-alert);"
+					>ABORT</a
+				>
+			</div>
+		</div>
+	</div>
+
+	<div class="decorations">
+		<div class="corner top-left"></div>
+		<div class="corner top-right"></div>
+		<div class="corner bottom-left"></div>
+		<div class="corner bottom-right"></div>
+	</div>
+
+	<style>
+		.hero {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			justify-items: center;
+			text-align: center;
+			margin-top: 5vh;
+			animation: fadeIn 1s ease-out;
+		}
+
+		.logo-container {
+			position: relative;
+			max-width: 600px;
+			width: 100%;
+			filter: drop-shadow(0 0 20px rgba(0, 255, 65, 0.3));
+		}
+
+		.main-logo {
+			width: 100%;
+			height: auto;
+		}
+
+		.scan-line {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: var(--color-accent);
+			box-shadow: 0 0 10px var(--color-accent);
+			animation: scan 3s linear infinite;
+			opacity: 0.7;
+		}
+
+		.protocol-badge {
+			position: absolute;
+			top: 2rem;
+			right: 2rem;
+			width: 150px;
+			text-align: center;
+			font-size: 0.8rem;
+			opacity: 0.8;
+			transform: rotate(5deg);
+		}
+
+		.protocol-badge img {
+			width: 100%;
+			filter: sepia(100%) hue-rotate(50deg) saturate(300%) contrast(1.2); /* Green tint */
+		}
+
+		.login-panel {
+			max-width: 500px;
+			width: 100%;
+			margin-top: 2rem;
+			background: rgba(0, 0, 0, 0.8);
+		}
+
+		.terminal-output {
+			text-align: left;
+			font-family: var(--font-mono);
+			font-size: 0.9rem;
+			margin: 1rem 0;
+			border-left: 2px solid var(--color-secondary);
+			padding-left: 1rem;
+			min-height: 150px;
+		}
+
+		.actions {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+			margin-top: 2rem;
+		}
+
+		@keyframes scan {
+			0% {
+				top: 0;
+				opacity: 0;
+			}
+			10% {
+				opacity: 1;
+			}
+			90% {
+				opacity: 1;
+			}
+			100% {
+				top: 100%;
+				opacity: 0;
+			}
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		/* Corner Markers */
+		.decorations {
+			position: fixed;
+			top: 20px;
+			left: 20px;
+			right: 20px;
+			bottom: 40px;
+			pointer-events: none;
+			z-index: 50;
+		}
+
+		.corner {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			border: 2px solid var(--color-accent);
+		}
+
+		.top-left {
+			top: 0;
+			left: 0;
+			border-right: none;
+			border-bottom: none;
+		}
+		.top-right {
+			top: 0;
+			right: 0;
+			border-left: none;
+			border-bottom: none;
+		}
+		.bottom-left {
+			bottom: 0;
+			left: 0;
+			border-right: none;
+			border-top: none;
+		}
+		.bottom-right {
+			bottom: 0;
+			right: 0;
+			border-left: none;
+			border-top: none;
+		}
+
+		@media (max-width: 768px) {
+			.protocol-badge {
+				position: relative;
+				top: auto;
+				right: auto;
+				margin-bottom: 2rem;
+				transform: none;
+			}
+
+			.decorations {
+				display: none;
+			}
+		}
+	</style>
+</Layout>
