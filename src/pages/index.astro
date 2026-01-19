@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 	<div class="hero">
 		<div class="logo-container">
 			<img
-				src="/mutantes-en-la-sombra.png"
+				src={import.meta.env.BASE_URL + "/mutantes-en-la-sombra.png"}
 				alt="Mutantes en la Sombra"
 				class="main-logo"
 			/>
@@ -14,10 +14,13 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 
 		<div class="protocol-badge">
-			<img src="/Mutant3s-fiht-protocol.png" alt="Fight Protocol" />
+			<img
+				src={import.meta.env.BASE_URL + "/Mutant3s-fiht-protocol.png"}
+				alt="Fight Protocol"
+			/>
 			<p>
-				CLEARANCE: <span style="color: var(--color-alert)"
-					>LEVEL 5</span>
+				CLEARANCE: <span style="color: var(--color-alert)">LEVEL 5</span
+				>
 			</p>
 		</div>
 
@@ -29,7 +32,8 @@ import Layout from "../layouts/Layout.astro";
 				<p>> CONNECTING TO SECURE SERVER...</p>
 				<p>
 					> <span style="color: var(--color-accent)"
-						>CONNECTION ESTABLISHED.</span>
+						>CONNECTION ESTABLISHED.</span
+					>
 				</p>
 				<p>> VERIFYING BIOMETRICS...</p>
 				<p>> <span class="text-glitch">ACCESS GRANTED</span>.</p>
