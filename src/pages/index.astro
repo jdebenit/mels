@@ -6,7 +6,9 @@ import Layout from "../layouts/Layout.astro";
 	<div class="hero">
 		<div class="logo-container">
 			<img
-				src={import.meta.env.BASE_URL + "/mutantes-en-la-sombra.png"}
+				src={import.meta.env.BASE_URL === "/"
+					? "/mutantes-en-la-sombra.png"
+					: import.meta.env.BASE_URL + "/mutantes-en-la-sombra.png"}
 				alt="Mutantes en la Sombra"
 				class="main-logo"
 			/>
@@ -15,7 +17,9 @@ import Layout from "../layouts/Layout.astro";
 
 		<div class="protocol-badge">
 			<img
-				src={import.meta.env.BASE_URL + "/Mutant3s-fiht-protocol.png"}
+				src={import.meta.env.BASE_URL === "/"
+					? "/Mutant3s-fiht-protocol.png"
+					: import.meta.env.BASE_URL + "/Mutant3s-fiht-protocol.png"}
 				alt="Fight Protocol"
 			/>
 			<p>
