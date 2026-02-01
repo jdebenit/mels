@@ -1,0 +1,50 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="MELS // RECURSOS">
+    <div class="content-container">
+        <h1>RECURSOS</h1>
+        <div class="divider"></div>
+        <section id="descargas">
+            <h2>Descargas</h2>
+            <p>SERVIDOR DE ARCHIVOS OFFLINE.</p>
+        </section>
+        <section id="hojas">
+            <h2>Hojas de personaje</h2>
+            <p>FORMULARIOS NO ENCONTRADOS.</p>
+        </section>
+        <section id="material">
+            <h2>Material gratuito</h2>
+            <p>CONTACTANDO CON INTENDENCIA...</p>
+        </section>
+    </div>
+
+    <style>
+        .content-container {
+            max-width: 800px;
+            margin: 100px auto 0;
+            padding: 2rem;
+            color: #ccc;
+        }
+        h1 {
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            color: var(--color-secondary);
+            margin-top: 2rem;
+            border-left: 3px solid var(--color-accent);
+            padding-left: 1rem;
+        }
+        .divider {
+            height: 2px;
+            background: var(--color-accent);
+            width: 100%;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px var(--color-accent);
+        }
+    </style>
+</Layout>

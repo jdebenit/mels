@@ -1,0 +1,310 @@
+---
+const menuItems = [
+    {
+        title: "Universo MUTANT3S",
+        path: "/universo",
+        children: [
+            { title: "Premisa del mundo", path: "/universo#premisa" },
+            { title: "Fenómeno M", path: "/universo#fenomeno-m" },
+            { title: "Tono y claves", path: "/universo#tono" },
+        ],
+    },
+    {
+        title: "Historia",
+        path: "/historia",
+        children: [
+            { title: "Historia secreta", path: "/historia#secreta" },
+            { title: "Cronología unificada", path: "/historia#cronologia" },
+            { title: "Grandes eventos", path: "/historia#eventos" },
+        ],
+    },
+    {
+        title: "Facciones",
+        path: "/facciones",
+        children: [
+            { title: "Servicios M (ISLERO)", path: "/facciones#islero" },
+            { title: "Prometheus", path: "/facciones#prometheus" },
+            { title: "Agentes libres", path: "/facciones#agentes" },
+        ],
+    },
+    {
+        title: "Operaciones",
+        path: "/operaciones",
+        children: [
+            {
+                title: "Operaciones históricas",
+                path: "/operaciones#historicas",
+            },
+            { title: "Archivos clasificados", path: "/operaciones#archivos" },
+            { title: "Semillas de aventura", path: "/operaciones#semillas" },
+        ],
+    },
+    {
+        title: "Sistema",
+        path: "/sistema",
+        children: [
+            { title: "Bases del sistema", path: "/sistema#bases" },
+            { title: "Arquetipos", path: "/sistema#arquetipos" },
+            { title: "Mecánicas", path: "/sistema#mecanicas" },
+        ],
+    },
+    {
+        title: "Recursos",
+        path: "/recursos",
+        children: [
+            { title: "Descargas", path: "/recursos#descargas" },
+            { title: "Hojas de personaje", path: "/recursos#hojas" },
+            { title: "Material gratuito", path: "/recursos#material" },
+        ],
+    },
+];
+
+const basePath =
+    import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+---
+
+<nav class="main-nav">
+    <div class="nav-container">
+        <div class="logo">
+            <a href={basePath + "/"}>MELS // TERMINAL</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu">
+            {
+                menuItems.map((item) => (
+                    <li class="nav-item">
+                        <a href={basePath + item.path} class="nav-link">
+                            {item.title}
+                        </a>
+                        {item.children && (
+                            <ul class="dropdown">
+                                {item.children.map((child) => (
+                                    <li>
+                                        <a href={basePath + child.path}>
+                                            {child.title}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", () => {
+            menuToggle.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+    }
+</script>
+
+<style>
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        border-bottom: 1px solid var(--color-accent);
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo a {
+        color: var(--color-accent);
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-shadow: 0 0 5px var(--color-accent);
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        position: relative;
+    }
+
+    .nav-link {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        transition: color 0.3s;
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .nav-link:hover,
+    .nav-item:hover .nav-link {
+        color: var(--color-accent);
+        text-shadow: 0 0 5px var(--color-accent);
+    }
+
+    /* Dropdown Styles */
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(0, 0, 0, 0.95);
+        border: 1px solid var(--color-accent);
+        list-style: none;
+        padding: 0.5rem 0;
+        min-width: 200px;
+        display: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-item:hover .dropdown {
+        display: block;
+        animation: glitch-anim 0.3s infinite;
+    }
+
+    .dropdown li a {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: #aaa;
+        text-decoration: none;
+        font-size: 0.8rem;
+        transition: all 0.2s;
+    }
+
+    .dropdown li a:hover {
+        background: rgba(0, 255, 65, 0.1);
+        color: var(--color-accent);
+        padding-left: 1.5rem;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: var(--color-accent);
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 60px; /* Adjust based on navbar height */
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background: rgba(0, 0, 0, 0.98);
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2rem;
+            transition: 0.3s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-item {
+            width: 100%;
+            text-align: center;
+        }
+
+        .dropdown {
+            position: static;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            display: none; /* Initially hidden on mobile too */
+            padding-left: 0;
+        }
+
+        /* Show dropdown on click/hover for mobile could be tricky, 
+       often better to just list them or have sub-toggles. 
+       For this terminal style, always showing or subtle indent is fine. 
+       Let's keep hover/focus for simplicity or make them always visible.
+    */
+        .nav-item:hover .dropdown {
+            display: block;
+            animation: none;
+        }
+
+        .dropdown li a {
+            padding-left: 0;
+            color: #666;
+        }
+
+        /* Animation for hamburger */
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    }
+
+    @keyframes glitch-anim {
+        0% {
+            transform: translate(0);
+        }
+        20% {
+            transform: translate(-2px, 2px);
+        }
+        40% {
+            transform: translate(-2px, -2px);
+        }
+        60% {
+            transform: translate(2px, 2px);
+        }
+        80% {
+            transform: translate(2px, -2px);
+        }
+        100% {
+            transform: translate(0);
+        }
+    }
+</style>
