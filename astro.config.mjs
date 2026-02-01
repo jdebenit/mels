@@ -5,7 +5,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jdebenit.github.io',
-  base: '/mels',
+  site: 'https://www.mutantesenlasombra.es',
+  base: '/',
   integrations: [react()]
 });
