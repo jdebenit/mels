@@ -9,7 +9,8 @@ clasificacion: "Acceso Restringido"
 
 Si has llegado hasta aquí, ya hemos observado tu expediente.
 
-La Variable M no es una elección, la lealtad sí.
+La Variable M no es una elección, la supervivencia sí.
+
 
 
 Si deseas continuar, prepárate.
