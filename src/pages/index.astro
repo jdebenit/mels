@@ -70,8 +70,9 @@ import Layout from "../layouts/Layout.astro";
 			gap: 2rem;
 			justify-items: center;
 			text-align: center;
-			margin-top: 5vh;
+			margin-top: 100px; /* Increased to clear the fixed nav */
 			animation: fadeIn 1s ease-out;
+			position: relative; /* Added to be the anchor for the badge */
 		}
 
 		.logo-container {
@@ -100,13 +101,14 @@ import Layout from "../layouts/Layout.astro";
 
 		.protocol-badge {
 			position: absolute;
-			top: 2rem;
-			right: 2rem;
-			width: 150px;
+			top: -20px; /* Positioned relative to the hero top */
+			right: 0;
+			width: 140px;
 			text-align: center;
 			font-size: 0.8rem;
 			opacity: 0.8;
 			transform: rotate(5deg);
+			z-index: 10;
 		}
 
 		.protocol-badge img {
@@ -176,7 +178,7 @@ import Layout from "../layouts/Layout.astro";
 
 		.decorations {
 			position: fixed;
-			top: 20px;
+			top: 80px; /* Adjusted to clear navigation bar */
 			left: 20px;
 			right: 20px;
 			bottom: 40px;
