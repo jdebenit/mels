@@ -1,63 +1,28 @@
 ---
-const menuItems = [
-    {
-        title: "Universo MUTANT3S",
-        path: "/universo",
-        children: [
-            { title: "Premisa del mundo", path: "/universo#premisa" },
-            { title: "Fenómeno M", path: "/universo#fenomeno-m" },
-            { title: "Tono y claves", path: "/universo#tono" },
-        ],
-    },
-    {
-        title: "Historia",
-        path: "/historia",
-        children: [
-            { title: "Historia secreta", path: "/historia#secreta" },
-            { title: "Cronología unificada", path: "/historia#cronologia" },
-            { title: "Grandes eventos", path: "/historia#eventos" },
-        ],
-    },
-    {
-        title: "Facciones",
-        path: "/facciones",
-        children: [
-            { title: "Servicios M (ISLERO)", path: "/facciones#islero" },
-            { title: "Prometheus", path: "/facciones#prometheus" },
-            { title: "Agentes libres", path: "/facciones#agentes" },
-        ],
-    },
-    {
-        title: "Operaciones",
-        path: "/operaciones",
-        children: [
-            {
-                title: "Operaciones históricas",
-                path: "/operaciones#historicas",
-            },
-            { title: "Archivos clasificados", path: "/operaciones#archivos" },
-            { title: "Semillas de aventura", path: "/operaciones#semillas" },
-        ],
-    },
-    {
-        title: "Sistema",
-        path: "/sistema",
-        children: [
-            { title: "Bases del sistema", path: "/sistema#bases" },
-            { title: "Arquetipos", path: "/sistema#arquetipos" },
-            { title: "Mecánicas", path: "/sistema#mecanicas" },
-        ],
-    },
-    {
-        title: "Recursos",
-        path: "/recursos",
-        children: [
-            { title: "Descargas", path: "/recursos#descargas" },
-            { title: "Hojas de personaje", path: "/recursos#hojas" },
-            { title: "Material gratuito", path: "/recursos#material" },
-        ],
-    },
+import { getCollection } from "astro:content";
+
+const collections = [
+    { id: "universo", title: "Universo MUTANT3S" },
+    { id: "historia", title: "Historia" },
+    { id: "facciones", title: "Facciones" },
+    { id: "operaciones", title: "Operaciones" },
+    { id: "sistema", title: "Sistema" },
+    { id: "recursos", title: "Recursos" },
 ];
+
+const menuItems = await Promise.all(
+    collections.map(async (col) => {
+        const entries = await getCollection(col.id as any);
+        return {
+            title: col.title,
+            path: `/${col.id}`,
+            children: entries.map((entry) => ({
+                title: entry.data.title,
+                path: `/${col.id}/${entry.id.replace(/\.md$/, "")}`,
+            })),
+        };
+    }),
+);
 
 const basePath =
     import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
