@@ -1,8 +1,8 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import { WizardContainer } from "../../components/wizard/WizardShell";
-import "../../components/wizard/WizardShell.css";
+import { CharacterWizardApp, WizardTrigger } from "../../components/wizard/CharacterWizard";
+import "../../components/wizard/CharacterWizard.css";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -53,7 +53,10 @@ const isBienvenida = entry.id === "bienvenida.md" || entry.id === "bienvenida";
         </div>
 
         {isBienvenida && (
-            <WizardContainer client:only="react" />
+            <>
+                <WizardTrigger client:only="react" />
+                <CharacterWizardApp client:only="react" />
+            </>
         )}
 
         {isRecruit && (

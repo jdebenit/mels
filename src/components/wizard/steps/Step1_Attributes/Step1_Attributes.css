@@ -1,0 +1,101 @@
+.step-attributes {
+    animation: fadeIn 0.3s ease;
+}
+
+.attributes-header {
+    margin-bottom: 2rem;
+}
+
+.attributes-header h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.points-counter {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border: 1px solid var(--color-secondary);
+    display: inline-block;
+    color: var(--color-text);
+    font-family: var(--font-mono);
+}
+
+.points-counter strong {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+}
+
+.points-counter.error {
+    border-color: var(--color-alert);
+}
+
+.points-counter.error strong {
+    color: var(--color-alert);
+}
+
+.attributes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .attributes-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.mutacion-section {
+    border-color: #ff00ff;
+    /* special pink/magenta outline for mutation to make it stand out */
+}
+
+.mutacion-section .wizard-section-title {
+    color: #ff00ff;
+}
+
+.secondary-stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.stat-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--color-bg);
+    background: var(--color-text);
+    font-weight: bold;
+    padding: 0.2rem;
+}
+
+.mutacion-stat {
+    border-color: #ff00ff;
+}
+
+.mutacion-stat .stat-label {
+    color: #ff00ff;
+}
+
+.mutacion-stat .stat-value {
+    background: #ff00ff;
+    color: var(--color-bg);
+}

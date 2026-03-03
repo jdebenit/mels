@@ -1,0 +1,32 @@
+.wizard-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    position: relative;
+    border-left: 3px solid var(--color-accent);
+}
+
+.wizard-section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.wizard-section-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wizard-section-icon {
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+}
+
+.wizard-section-content {
+    /* Layout flexibility for children */
+}

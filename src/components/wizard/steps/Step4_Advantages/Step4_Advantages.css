@@ -1,0 +1,168 @@
+.step-advantages {
+    animation: fadeIn 0.3s ease;
+}
+
+.advantages-header h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .advantages-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.traits-selection-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.trait-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trait-item:last-child {
+    border-bottom: none;
+}
+
+.traits-selection-list.advantages .trait-item.active .trait-name {
+    color: var(--color-accent);
+}
+
+.traits-selection-list.disadvantages .trait-item.active .trait-name {
+    color: var(--color-alert);
+}
+
+.trait-item.active {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.trait-info {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.trait-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.trait-name {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.faction-badge {
+    font-size: 0.5rem;
+    padding: 1px 4px;
+    background: rgba(0, 255, 65, 0.2);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 2px;
+}
+
+.trait-level-badge {
+    font-size: 0.65rem;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+}
+
+.trait-description {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.trait-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+}
+
+.spec-btn {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.spec-btn:hover:not(:disabled) {
+    background: var(--color-secondary);
+    color: var(--color-bg);
+}
+
+.spec-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: #666;
+    color: #666;
+}
+
+.spec-btn.plus {
+    border-color: var(--color-text);
+    color: var(--color-text);
+}
+
+.spec-btn.plus:hover:not(:disabled) {
+    background: var(--color-text);
+    color: var(--color-bg);
+}
+
+.spec-blocks {
+    display: flex;
+    gap: 2px;
+}
+
+.spec-block {
+    width: 8px;
+    height: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+}
+
+.traits-selection-list.advantages .spec-block.filled {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 5px var(--color-accent);
+}
+
+.traits-selection-list.disadvantages .spec-block.filled {
+    background: var(--color-alert);
+    border-color: var(--color-alert);
+    box-shadow: 0 0 5px var(--color-alert);
+}
+
+.spec-block.unavailable {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: repeating-linear-gradient(45deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0.05) 2px,
+            transparent 2px,
+            transparent 4px);
+}
