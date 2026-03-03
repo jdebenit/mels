@@ -2,16 +2,20 @@
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
+// 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-    const entries = await getCollection("recursos");
-    return entries.map((entry) => ({
+    const recursosEntries = await getCollection("recursos");
+    return recursosEntries.map((entry) => ({
         params: { slug: entry.id.replace(/\.md$/, "") },
         props: { entry },
     }));
 }
 
+// 2. For your template, you can get the entry directly from the prop
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+const isRecruit = entry.id === "reclutamiento.md" || entry.id === "reclutamiento";
 ---
 
 <Layout title={entry.data.title}>
@@ -45,15 +49,82 @@ const { Content } = await render(entry);
             <Content />
         </div>
 
+        {isRecruit && (
+            <div class="login-integration mt-12">
+                <div class="panel login-panel">
+                    <h2>&gt; SYSTEM_LOGIN</h2>
+                    <p>ENTER CREDENTIALS TO COMPLETE RECRUITMENT.</p>
+        
+                    <div class="terminal-output" id="terminal-log">
+                        <p>> CONNECTING TO RECRUITMENT DATABASE...</p>
+                        <p>> <span style="color: var(--color-accent)">ENCRYPTION ACTIVE.</span></p>
+                        <p>> AWAITING MAGIC WORD...</p>
+                    </div>
+        
+                    <div class="terminal-input-line">
+                        <span class="prompt-char">&gt;</span>
+                        <input
+                            type="text"
+                            id="recruit-password"
+                            autocomplete="off"
+                            placeholder="PASSWORD"
+                        />
+                    </div>
+                </div>
+
+                <!-- Nedry Modal -->
+                <div id="nedry-modal" class="nedry-modal">
+                    <div class="nedry-container">
+                        <img
+                            src="/m-you-didnt-say-the-magic-word.gif"
+                            alt="Nedry Jurassic Park"
+                        />
+                        <div class="nedry-text">
+                            AH AH AH!<br />
+                            YOU DIDN'T SAY THE MAGIC WORD!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )}
+
         {
             entry.data.tags && entry.data.tags.length > 0 && (
-                <div class="mt-12 pt-4 border-t border-[var(--color-accent)] opacity-60 text-xs">
+                <div class="mt-12 pt-4 border-t border-[var(--color-accent)] opacity-60 text-xs text-right">
                     TAGS: {entry.data.tags.join(", ")}
                 </div>
             )
         }
     </div>
 </Layout>
+
+<script>
+    const input = document.getElementById("recruit-password") as HTMLInputElement;
+    const modal = document.getElementById("nedry-modal");
+
+    if (input && modal) {
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                const value = input.value.trim().toLowerCase();
+                if (value === "mutis") {
+                    window.location.href = "/recursos/bienvenida";
+                } else {
+                    modal.classList.add("active");
+                    input.value = "";
+                    setTimeout(() => {
+                        modal.classList.remove("active");
+                        input.focus();
+                    }, 5000);
+                }
+            }
+        });
+
+        modal.addEventListener("click", () => {
+            modal.classList.remove("active");
+            input.focus();
+        });
+    }
+</script>
 
 <style>
     .content-wrapper {
@@ -77,4 +148,63 @@ const { Content } = await render(entry);
         margin-bottom: 1.5rem;
         font-size: 1.1rem;
     }
+
+    /* Login Styles */
+    .login-panel {
+        background: rgba(0, 0, 0, 0.8);
+        border: 1px solid var(--color-accent);
+        padding: 2rem;
+        position: relative;
+    }
+    .terminal-output {
+        text-align: left;
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        margin: 1rem 0;
+        border-left: 2px solid var(--color-secondary);
+        padding-left: 1rem;
+        min-height: 100px;
+    }
+    .terminal-input-line {
+        display: flex;
+        align-items: center;
+        color: var(--color-accent);
+        font-family: var(--font-mono);
+        font-size: 1.2rem;
+    }
+    .prompt-char {
+        margin-right: 10px;
+        animation: blink 1s step-end infinite;
+    }
+    #recruit-password {
+        background: transparent;
+        border: none;
+        color: var(--color-accent);
+        font-family: var(--font-mono);
+        font-size: 1.2rem;
+        outline: none;
+        width: 100%;
+        text-transform: uppercase;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* Nedry Modal */
+    .nedry-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .nedry-modal.active { display: flex; }
+    .nedry-container { text-align: center; color: #fff; font-family: "Courier New", monospace; }
+    .nedry-container img { max-width: 80%; border: 4px solid white; margin-bottom: 20px; }
+    .nedry-text { font-size: 2rem; font-weight: bold; text-transform: uppercase; animation: flash 0.5s infinite; }
+    @keyframes flash { 0%, 100% { color: #fff; } 50% { color: red; } }
 </style>

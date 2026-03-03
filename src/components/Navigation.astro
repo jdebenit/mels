@@ -12,7 +12,8 @@ const collections = [
 
 const menuItems = await Promise.all(
     collections.map(async (col) => {
-        const entries = await getCollection(col.id as any);
+        const allEntries = await getCollection(col.id as any);
+        const entries = allEntries.filter((entry) => !entry.data.hidden);
         return {
             title: col.title,
             path: `/${col.id}`,

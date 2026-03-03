@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="MELS // SYSTEM ACCESS">
+<Layout title="MELS // BIENVENIDO">
 	<div class="hero">
 		<div class="logo-container">
 			<img
@@ -23,36 +23,35 @@ import Layout from "../layouts/Layout.astro";
 				alt="Fight Protocol"
 			/>
 			<p>
-				CLEARANCE: <span style="color: var(--color-alert)">LEVEL 5</span
+				STATUS: <span style="color: var(--color-accent)"
+					>OPERATIONAL</span
 				>
 			</p>
 		</div>
 
-		<div class="panel login-panel">
-			<h2>&gt; SYSTEM_LOGIN</h2>
-			<p>ENTER CREDENTIALS TO ACCESS DATABASE.</p>
-
-			<div class="terminal-output">
-				<p>> CONNECTING TO SECURE SERVER...</p>
+		<div class="intro-panel panel">
+			<h2>&gt; RECOVERY_PROTOCOL: MELS_3ED</h2>
+			<div class="intro-text">
 				<p>
-					> <span style="color: var(--color-accent)"
-						>CONNECTION ESTABLISHED.</span
-					>
+					Bienvenido al portal oficial de <strong
+						>Mutantes en la Sombra: Tercera Edición</strong
+					>.
 				</p>
-				<p>> VERIFYING BIOMETRICS...</p>
-				<p>> <span class="text-glitch">ACCESS GRANTED</span>.</p>
-				<br />
-				<p>WARNING: UNAUTHORIZED ACCESS IS A FELONY.</p>
+				<p>
+					Estás accediendo a la base de datos central de un mundo al
+					borde del colapso, donde la Variable M ha cambiado las
+					reglas del juego para siempre.
+				</p>
+				<p>
+					Este es un juego de rol de espionaje, conspiración y poderes
+					mutantes, donde la supervivencia es el único objetivo real y
+					la verdad es el activo más escaso.
+				</p>
 			</div>
 
-			<div class="terminal-input-line">
-				<span class="prompt-char">&gt;</span>
-				<input
-					type="text"
-					id="password-input"
-					autocomplete="off"
-					autofocus
-				/>
+			<div class="terminal-footer">
+				<p>> ACCESO PÚBLICO HABILITADO</p>
+				<p>> EXPLORA LAS SECCIONES SUPERIORES PARA COMENZAR</p>
 			</div>
 		</div>
 	</div>
@@ -112,115 +111,39 @@ import Layout from "../layouts/Layout.astro";
 
 		.protocol-badge img {
 			width: 100%;
-			filter: sepia(100%) hue-rotate(50deg) saturate(300%) contrast(1.2); /* Green tint */
+			filter: sepia(100%) hue-rotate(50deg) saturate(300%) contrast(1.2);
 		}
 
-		.login-panel {
-			max-width: 500px;
+		.intro-panel {
+			max-width: 650px;
 			width: 100%;
 			margin-top: 2rem;
 			background: rgba(0, 0, 0, 0.8);
-			position: relative;
-		}
-
-		.terminal-input-line {
-			display: flex;
-			align-items: center;
-			background: transparent;
-			border: none;
-			color: var(--color-accent);
-			font-family: var(--font-mono);
-			font-size: 1.2rem;
-			width: 100%;
-			margin-top: 1rem;
-		}
-
-		.prompt-char {
-			margin-right: 10px;
-			color: var(--color-accent);
-			animation: blink 1s step-end infinite;
-		}
-
-		#password-input {
-			background: transparent;
-			border: none;
-			color: var(--color-accent);
-			font-family: var(--font-mono);
-			font-size: 1.2rem;
-			outline: none;
-			width: 100%;
-			text-transform: uppercase;
-		}
-
-		/* Nedry Modal */
-		.nedry-modal {
-			display: none;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: black;
-			z-index: 9999;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-		}
-
-		.nedry-modal.active {
-			display: flex;
-		}
-
-		.nedry-container {
-			text-align: center;
-			color: #fff;
-			font-family: "Courier New", monospace;
-		}
-
-		.nedry-container img {
-			max-width: 80%;
-			border: 4px solid white;
-			margin-bottom: 20px;
-		}
-
-		.nedry-text {
-			font-size: 2rem;
-			font-weight: bold;
-			text-transform: uppercase;
-			animation: flash 0.5s infinite;
-		}
-
-		@keyframes blink {
-			50% {
-				opacity: 0;
-			}
-		}
-
-		@keyframes flash {
-			0%,
-			100% {
-				color: #fff;
-			}
-			50% {
-				color: red;
-			}
-		}
-
-		.terminal-output {
+			border: 1px solid var(--color-accent);
+			padding: 2rem;
 			text-align: left;
 			font-family: var(--font-mono);
-			font-size: 0.9rem;
-			margin: 1rem 0;
-			border-left: 2px solid var(--color-secondary);
-			padding-left: 1rem;
-			min-height: 150px;
 		}
 
-		.actions {
-			display: flex;
-			gap: 1rem;
-			justify-content: center;
+		.intro-panel h2 {
+			color: var(--color-accent);
+			font-size: 1.2rem;
+			margin-bottom: 1.5rem;
+			border-bottom: 1px solid var(--color-accent);
+			padding-bottom: 0.5rem;
+		}
+
+		.intro-text p {
+			color: #ccc;
+			line-height: 1.6;
+			margin-bottom: 1rem;
+		}
+
+		.terminal-footer {
 			margin-top: 2rem;
+			font-size: 0.8rem;
+			color: var(--color-secondary);
+			opacity: 0.8;
 		}
 
 		@keyframes scan {
@@ -251,7 +174,6 @@ import Layout from "../layouts/Layout.astro";
 			}
 		}
 
-		/* Corner Markers */
 		.decorations {
 			position: fixed;
 			top: 20px;
@@ -302,57 +224,9 @@ import Layout from "../layouts/Layout.astro";
 				margin-bottom: 2rem;
 				transform: none;
 			}
-
 			.decorations {
 				display: none;
 			}
 		}
 	</style>
-	<!-- Nedry Modal -->
-	<div id="nedry-modal" class="nedry-modal">
-		<div class="nedry-container">
-			<img
-				src="m-you-didnt-say-the-magic-word.gif"
-				alt="Nedry Jurassic Park"
-			/>
-			<div class="nedry-text">
-				AH AH AH!<br />
-				YOU DIDN'T SAY THE MAGIC WORD!
-			</div>
-		</div>
-	</div>
-
-	<script>
-		const input = document.getElementById(
-			"password-input",
-		) as HTMLInputElement;
-		const modal = document.getElementById("nedry-modal");
-
-		if (input && modal) {
-			input.addEventListener("keydown", (e) => {
-				if (e.key === "Enter") {
-					const value = input.value.trim().toLowerCase();
-					if (value === "mutis") {
-						// Success
-						window.location.href = "/universo";
-					} else {
-						// Failure
-						modal.classList.add("active");
-						input.value = "";
-						// Optional: Hide modal after a few seconds or let them click to close
-						setTimeout(() => {
-							modal.classList.remove("active");
-							input.focus();
-						}, 5000); // 5 seconds of shame
-					}
-				}
-			});
-
-			// Close modal on click
-			modal.addEventListener("click", () => {
-				modal.classList.remove("active");
-				input.focus();
-			});
-		}
-	</script>
 </Layout>

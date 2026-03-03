@@ -7,6 +7,7 @@ const melsSchema = z.object({
     categoria: z.string().optional(),
     tags: z.array(z.string()).optional(),
     clasificacion: z.string().optional(),
+    hidden: z.boolean().optional(),
 });
 
 // Definir las colecciones utilizando Loader Glob para Astro v5
