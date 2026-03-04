@@ -322,7 +322,14 @@ const CharacterWizardCore = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
                     Anterior
                 </WizardButton>
 
-                <div className="wizard-status font-mono text-xs opacity-60">
+                <div className="wizard-status font-mono text-xs" style={{
+                    padding: '0.5rem 1rem',
+                    background: 'rgba(0,0,0,0.6)',
+                    border: '1px solid var(--color-secondary)',
+                    color: 'var(--color-secondary)',
+                    letterSpacing: '2px',
+                    fontFamily: '"Share Tech Mono", monospace'
+                }}>
                     PASO {currentStepIndex + 1}/{STEPS.length}
                 </div>
 
