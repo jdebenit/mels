@@ -7,6 +7,7 @@ import { Step1_Attributes } from './steps/Step1_Attributes';
 import { Step2_Faction } from './steps/Step2_Faction';
 import { Step3_Specializations } from './steps/Step3_Specializations';
 import { Step4_Advantages } from './steps/Step4_Advantages';
+import { Step5_Fractals } from './steps/Step5_Fractals';
 import { Step6_Details } from './steps/Step6_Details';
 import './CharacterWizard.css';
 
@@ -16,6 +17,7 @@ const StepPlaceholder = ({ title }: { title: string }) => (
         <h3>[EN CONSTRUCCIÓN] {title}</h3>
     </div>
 );
+
 
 export const CharacterWizard = () => {
     // 1. Lifted State Management
@@ -91,6 +93,7 @@ export const CharacterWizard = () => {
                 {currentStepConfig.id === 'specializations' && <StepPlaceholder title={currentStepConfig.name} />}
                 {currentStepConfig.id === 'advantages' && <StepPlaceholder title={currentStepConfig.name} />}
                 {currentStepConfig.id === 'fractals' && <StepPlaceholder title={currentStepConfig.name} />}
+                {currentStepConfig.id === 'details' && <StepPlaceholder title={currentStepConfig.name} />}
 
             </main>
 
@@ -299,7 +302,12 @@ const CharacterWizardCore = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
                         onChange={handleStepChange}
                     />
                 )}
-                {currentStepConfig.id === 'fractals' && <StepPlaceholder title={currentStepConfig.name} />}
+                {currentStepConfig.id === 'fractals' && (
+                    <Step5_Fractals
+                        data={characterData}
+                        onChange={handleStepChange}
+                    />
+                )}
                 {currentStepConfig.id === 'details' && (
                     <Step6_Details
                         data={characterData}

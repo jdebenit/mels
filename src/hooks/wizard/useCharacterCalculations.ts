@@ -125,6 +125,51 @@ export const useCharacterCalculations = (characterData: CharacterState) => {
 
         const isAdvantagesValid = totalAdvantageLevels <= 3 && totalDisadvantageLevels >= requiredDisadvantageLevels;
 
+        // Fractals
+        const isMutant = finalAttributes.mutacion > 0;
+        let totalFractalPointsSpent = 0;
+        const maxFractalPoints = 4;
+
+        const { principal, opuesto, levels } = characterData.fractals;
+        let fractalErrors: string[] = [];
+        let isFractalsValid = true;
+
+        if (isMutant) {
+            Object.entries(levels).forEach(([fractal, lvl]) => {
+                if (fractal === principal) {
+                    // Principal gets +1 free level, so you only pay for what's above 1
+                    totalFractalPointsSpent += Math.max(0, lvl - 1);
+                } else {
+                    totalFractalPointsSpent += lvl;
+                }
+            });
+
+            const principalLevel = principal ? Math.max(1, levels[principal] || 1) : 0;
+
+            if (!principal) fractalErrors.push("Mutante: Seleccione Fractal Principal.");
+            if (!opuesto) fractalErrors.push("Mutante: Seleccione Fractal Opuesto.");
+            if (principal === opuesto && principal !== null) fractalErrors.push("Principal y Opuesto no pueden ser el mismo.");
+
+            Object.entries(levels).forEach(([fractal, lvl]) => {
+                if (principal && lvl > principalLevel) {
+                    fractalErrors.push(`${fractal.toUpperCase()} supera al Principal (${principalLevel}).`);
+                    isFractalsValid = false;
+                }
+                if (opuesto && fractal === opuesto && lvl > Math.max(0, principalLevel - 1)) {
+                    fractalErrors.push(`El Opuesto (${opuesto.toUpperCase()}) no puede superar ${Math.max(0, principalLevel - 1)}.`);
+                    isFractalsValid = false;
+                }
+            });
+
+            if (totalFractalPointsSpent > maxFractalPoints) {
+                fractalErrors.push("Límite de puntos excedido.");
+                isFractalsValid = false;
+            }
+            if (!principal || !opuesto || principal === opuesto) {
+                isFractalsValid = false;
+            }
+        }
+
         return {
             finalAttributes,
             secondaryAttributes,
@@ -150,6 +195,13 @@ export const useCharacterCalculations = (characterData: CharacterState) => {
                     remainingDisadvantagesNeeded,
                     max: 3,
                     isValid: isAdvantagesValid
+                },
+                fractals: {
+                    spent: totalFractalPointsSpent,
+                    remaining: isMutant ? maxFractalPoints - totalFractalPointsSpent : 0,
+                    max: maxFractalPoints,
+                    isValid: isMutant ? isFractalsValid : true,
+                    errors: fractalErrors
                 }
             }
         };

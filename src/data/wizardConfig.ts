@@ -14,12 +14,12 @@ export const initialCharacterState = {
     rank: "",
     organization: "",
     attributes: {
-        fuerza: 2,
-        destreza: 2,
-        carisma: 2,
-        inteligencia: 2,
-        percepcion: 2,
-        voluntad: 2,
+        fuerza: 0,
+        destreza: 0,
+        carisma: 0,
+        inteligencia: 0,
+        percepcion: 0,
+        voluntad: 0,
         mutacion: 0
     },
     derivedStats: {
