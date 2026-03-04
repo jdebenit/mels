@@ -33,12 +33,19 @@ export const CharacterWizard = () => {
         setCharacterData(prev => {
             const nextState = { ...prev };
 
-            // Deep merge logic for specific keys
+            // For this wizard, updates to objects like advantages, fractals, or attributes
+            // should replace the specific sub-object completely from the step's standpoint
+            // or merge at the first level.
             Object.keys(updates).forEach((key) => {
                 const k = key as keyof CharacterState;
                 if (typeof updates[k] === 'object' && updates[k] !== null && !Array.isArray(updates[k])) {
-                    // It's a nested object like attributes or fractals
-                    (nextState as any)[k] = { ...(prev as any)[k], ...(updates as any)[k] };
+                    // It's a nested object like attributes or fractals.
+                    // We need to merge them to not lose unrelated fields (like fractals.principal when updating fractals.levels),
+                    // but for keys like advantages (Record<string,number>), a typical spread merges keys but doesn't delete them.
+                    // We will just do a shallow replacement if the update comes from a step that manages the whole object.
+                    // Actually, steps provide the FULL new sub-object when updating arrays/records.
+                    // So a direct replacement is safer here.
+                    (nextState as any)[k] = updates[k];
                 } else {
                     // It's a primitive or array
                     (nextState as any)[k] = updates[k];
@@ -165,7 +172,9 @@ const CharacterWizardCore = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
             Object.keys(updates).forEach((key) => {
                 const k = key as keyof CharacterState;
                 if (typeof updates[k] === 'object' && updates[k] !== null && !Array.isArray(updates[k])) {
-                    (nextState as any)[k] = { ...(prev as any)[k], ...(updates as any)[k] };
+                    // It's a nested object like attributes or fractals.
+                    // Like in the outer wizard, we do a flat replacement to allow deleting keys.
+                    (nextState as any)[k] = updates[k];
                 } else {
                     (nextState as any)[k] = updates[k];
                 }

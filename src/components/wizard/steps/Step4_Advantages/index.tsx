@@ -36,11 +36,11 @@ export const Step4_Advantages: React.FC<StepProps> = ({ data, onChange }) => {
 
         if (newLevel === 0) {
             delete newTraits[traitId];
+            onChange({ [type]: newTraits });
         } else {
             newTraits[traitId] = newLevel;
+            onChange({ [type]: newTraits });
         }
-
-        onChange({ [type]: newTraits });
     };
 
     const renderTraitList = (traits: Trait[], type: 'advantages' | 'disadvantages', factionList: string[]) => {
