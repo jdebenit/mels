@@ -3,12 +3,16 @@ export const STEPS = [
     { id: 'faction', name: 'Elección de Facción' },
     { id: 'specializations', name: 'Especializaciones' },
     { id: 'advantages', name: 'Ventajas y Desventajas' },
-    { id: 'fractals', name: 'Fractales' }
+    { id: 'fractals', name: 'Fractales' },
+    { id: 'details', name: 'Detalles Personales' }
 ];
 
 export const initialCharacterState = {
     name: "",
     concept: "",
+    profession: "",
+    rank: "",
+    organization: "",
     attributes: {
         fuerza: 2,
         destreza: 2,

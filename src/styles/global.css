@@ -161,3 +161,24 @@ a:hover {
   color: var(--color-bg);
   box-shadow: 0 0 20px var(--color-accent);
 }
+
+/* --- Wizard Web App Mode Overrides --- */
+body.wizard-mode-active > header,
+body.wizard-mode-active > nav,
+body.wizard-mode-active > footer,
+body.wizard-mode-active > .vignette,
+body.wizard-mode-active > .crt-overlay {
+  display: none !important;
+}
+
+body.wizard-mode-active .container {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: static !important;
+  z-index: auto !important;
+}
+
+body.wizard-mode-active {
+  overflow: hidden !important;
+}

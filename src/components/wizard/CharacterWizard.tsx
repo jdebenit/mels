@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { initialCharacterState, STEPS, type CharacterState } from '../../data/wizardConfig';
+import { APP_VERSIONS } from '../../data/appVersions';
 import { useCharacterCalculations } from '../../hooks/wizard/useCharacterCalculations';
 import { WizardButton } from './shared/ui/WizardButton';
 import { Step1_Attributes } from './steps/Step1_Attributes';
 import { Step2_Faction } from './steps/Step2_Faction';
 import { Step3_Specializations } from './steps/Step3_Specializations';
 import { Step4_Advantages } from './steps/Step4_Advantages';
+import { Step6_Details } from './steps/Step6_Details';
 import './CharacterWizard.css';
 
 // Placeholder for Steps until Step 5 is implemented
@@ -174,22 +176,92 @@ const CharacterWizardCore = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
     const prevStep = () => setCurrentStepIndex(prev => Math.max(prev - 1, 0));
 
     useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add('wizard-mode-active');
+        } else {
+            document.body.classList.remove('wizard-mode-active');
+        }
+
         const handleEsc = (e: KeyboardEvent) => {
             if (e.key === 'Escape') setIsOpen(false);
         };
         window.addEventListener('keydown', handleEsc);
-        return () => window.removeEventListener('keydown', handleEsc);
-    }, [setIsOpen]);
+        return () => {
+            window.removeEventListener('keydown', handleEsc);
+            document.body.classList.remove('wizard-mode-active'); // Cleanup on unmount
+        };
+    }, [isOpen, setIsOpen]);
+
+    // JSON Export/Import Handlers
+    const handleExport = () => {
+        const exportPayload = {
+            meta: {
+                version: APP_VERSIONS.WIZARD,
+                generator: "MELS Wizard"
+            },
+            ...characterData
+        };
+
+        const dataStr = JSON.stringify(exportPayload, null, 2);
+        const blob = new Blob([dataStr], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `ficha_${characterData.name || 'operativo'}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    };
+
+    const handleImport = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            try {
+                const json = JSON.parse(event.target?.result as string);
+                // Basic validation
+                if (json && typeof json === 'object') {
+                    // Strip meta chunk when importing
+                    const { meta, ...characterPayload } = json;
+                    // We merge with initial state to ensure all fields exist
+                    setCharacterData({ ...initialCharacterState, ...characterPayload });
+                }
+            } catch (err) {
+                console.error("Error parsing JSON:", err);
+                alert("Error al leer el archivo JSON.");
+            }
+        };
+        reader.readAsText(file);
+        // Reset input so the same file could be selected again if needed
+        e.target.value = '';
+    };
 
     const currentStepConfig = STEPS[currentStepIndex];
 
     return (
         <div className="wizard-overlay">
             <header className="wizard-header">
-                <h2>{characterData.name || 'NUEVO OPERATIVO'} // CREACIÓN</h2>
-                <button className="wizard-close-btn" onClick={() => setIsOpen(false)}>
-                    Cerrar [ESC]
-                </button>
+                <h2>
+                    {characterData.name || 'NUEVO OPERATIVO'} // CREACIÓN
+                    <span style={{ fontSize: '0.6rem', color: 'var(--color-secondary)', marginLeft: '10px', verticalAlign: 'top' }}>
+                        [{APP_VERSIONS.WIZARD}]
+                    </span>
+                </h2>
+                <div className="wizard-header-actions">
+                    <label className="wizard-btn" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', cursor: 'pointer' }}>
+                        IMPORTAR JSON
+                        <input type="file" accept=".json" style={{ display: 'none' }} onChange={handleImport} />
+                    </label>
+                    <button className="wizard-btn" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }} onClick={handleExport}>
+                        EXPORTAR JSON
+                    </button>
+                    <button className="wizard-close-btn" onClick={() => setIsOpen(false)}>
+                        Cerrar [ESC]
+                    </button>
+                </div>
             </header>
 
             <main className="wizard-content">
@@ -228,6 +300,12 @@ const CharacterWizardCore = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
                     />
                 )}
                 {currentStepConfig.id === 'fractals' && <StepPlaceholder title={currentStepConfig.name} />}
+                {currentStepConfig.id === 'details' && (
+                    <Step6_Details
+                        data={characterData}
+                        onChange={handleStepChange}
+                    />
+                )}
 
             </main>
 
@@ -237,7 +315,7 @@ const CharacterWizardCore = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
                 </WizardButton>
 
                 <div className="wizard-status font-mono text-xs opacity-60">
-                    PUNTOS: {calc.points.attributes.spent}/48 | PASO {currentStepIndex + 1}/{STEPS.length}
+                    PASO {currentStepIndex + 1}/{STEPS.length}
                 </div>
 
                 <WizardButton onClick={nextStep} variant="primary">
