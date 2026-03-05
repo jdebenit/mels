@@ -26,7 +26,7 @@ export const Step6_Details: React.FC<StepProps> = ({ data, onChange }) => {
             <div className="details-grid">
                 <WizardSection title="Identificación">
                     <div className="wizard-field">
-                        <label>Nombre del Operativo / Alias</label>
+                        <label>Sujeto</label>
                         <input
                             type="text"
                             className="wizard-input text-input"
@@ -50,13 +50,24 @@ export const Step6_Details: React.FC<StepProps> = ({ data, onChange }) => {
 
                 <WizardSection title="Ficha Profesional">
                     <div className="wizard-field">
-                        <label>Profesión / Ocupación Principal</label>
+                        <label>Sexo</label>
                         <input
                             type="text"
                             className="wizard-input text-input"
-                            placeholder="Ej. Investigador Privado, Hacker"
-                            value={data.profession || ''}
-                            onChange={(e) => handleChange('profession', e.target.value)}
+                            placeholder="Ej. Hombre, Mujer, etc."
+                            value={data.sex || ''}
+                            onChange={(e) => handleChange('sex', e.target.value)}
+                        />
+                    </div>
+
+                    <div className="wizard-field">
+                        <label>Edad</label>
+                        <input
+                            type="text"
+                            className="wizard-input text-input"
+                            placeholder="Ej. 30"
+                            value={data.age || ''}
+                            onChange={(e) => handleChange('age', e.target.value)}
                         />
                     </div>
 

@@ -10,7 +10,8 @@ export const STEPS = [
 export const initialCharacterState = {
     name: "",
     concept: "",
-    profession: "",
+    sex: "",
+    age: "",
     rank: "",
     organization: "",
     attributes: {
