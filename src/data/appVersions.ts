@@ -1,4 +1,4 @@
 
 export const APP_VERSIONS = {
-    WIZARD: 'Alpha 0.1.0'
+    WIZARD: 'Alpha 0.2.1'
 };

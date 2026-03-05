@@ -35,20 +35,6 @@ export const Step6_Details: React.FC<StepProps> = ({ data, onChange }) => {
                             onChange={(e) => handleChange('name', e.target.value)}
                         />
                     </div>
-
-                    <div className="wizard-field">
-                        <label>Concepto (Breve descripción)</label>
-                        <input
-                            type="text"
-                            className="wizard-input text-input"
-                            placeholder="Ej. Ex-militar buscador de redención"
-                            value={data.concept || ''}
-                            onChange={(e) => handleChange('concept', e.target.value)}
-                        />
-                    </div>
-                </WizardSection>
-
-                <WizardSection title="Ficha Profesional">
                     <div className="wizard-field">
                         <label>Sexo</label>
                         <input
@@ -70,6 +56,10 @@ export const Step6_Details: React.FC<StepProps> = ({ data, onChange }) => {
                             onChange={(e) => handleChange('age', e.target.value)}
                         />
                     </div>
+                </WizardSection>
+
+                <WizardSection title="Ficha Profesional">
+
 
                     <div className="wizard-field">
                         <label>Rango / Nivel de Acceso</label>
@@ -81,7 +71,6 @@ export const Step6_Details: React.FC<StepProps> = ({ data, onChange }) => {
                             onChange={(e) => handleChange('rank', e.target.value)}
                         />
                     </div>
-
                     <div className="wizard-field">
                         <label>Organización / Departamento</label>
                         <input
@@ -90,6 +79,16 @@ export const Step6_Details: React.FC<StepProps> = ({ data, onChange }) => {
                             placeholder="Ej. Prometheus, División Táctica"
                             value={data.organization || ''}
                             onChange={(e) => handleChange('organization', e.target.value)}
+                        />
+                    </div>
+                    <div className="wizard-field">
+                        <label>Concepto (Breve descripción)</label>
+                        <input
+                            type="text"
+                            className="wizard-input text-input"
+                            placeholder="Ej. Ex-militar buscador de redención"
+                            value={data.concept || ''}
+                            onChange={(e) => handleChange('concept', e.target.value)}
                         />
                     </div>
                 </WizardSection>
