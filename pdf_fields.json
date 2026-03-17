@@ -1,0 +1,1026 @@
+[
+  {
+    "name": "SUJETO",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "ORGANIZACIÓN",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "SEXO",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "EDAD",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "ALTURA",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Atléticas",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Chapuzas",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Combate",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Conducir",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Cultura",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Infiltración",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Influencia",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Informática",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Investigación",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Juegos de azar",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Picaresca",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Política",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "Supervivencia",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "undefined_3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOTAS OPERATIVAS 1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOTAS OPERATIVAS 2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOTAS OPERATIVAS 3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOTAS OPERATIVAS 4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "undefined_5",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "PRIMARIO",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "1_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "2_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "3_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "5",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "6",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "7",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "8",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "1_3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "2_3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "3_3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "4_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "5_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "6_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "7_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "8_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "9",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "10",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "11",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "12",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "13",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "14",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "15",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "16",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "17",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "18",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "1_4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "2_4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "3_4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "4_3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "5_3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "6_3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "7_3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "8_3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "9_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "10_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "11_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "12_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "13_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "14_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "15_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "16_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "17_2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 5",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 6",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 7",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 8",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 9",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 10",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 11",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 12",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 13",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 14",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 15",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 16",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 17",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "USOS DE PODER 18",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "alfa",
+    "type": "PDFRadioGroup"
+  },
+  {
+    "name": "beta",
+    "type": "PDFRadioGroup"
+  },
+  {
+    "name": "epsilon",
+    "type": "PDFRadioGroup"
+  },
+  {
+    "name": "delta",
+    "type": "PDFRadioGroup"
+  },
+  {
+    "name": "gamma",
+    "type": "PDFRadioGroup"
+  },
+  {
+    "name": "XP GANADA",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "XP GASTADA",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "VENTAJA.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "VENTAJA.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "VENTAJA.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "VENTAJA.4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "VENTAJA.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DESVENTAJA.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DESVENTAJA.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DESVENTAJA.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DESVENTAJA.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DESVENTAJA.4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "FRACTAL PRIMARIO",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "PA",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "FUE",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DES",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "INT",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CAR",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "MUT",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "PER",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "INI",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DEF",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LET",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "INSERTAR IMAGEN",
+    "type": "PDFButton"
+  },
+  {
+    "name": "PA ACTUALES",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE VEH.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE VEH.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE VEH.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE VEH.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "V MAX.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "V MAX.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "V MAX.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "V MAX.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "ACEL.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "ACEL.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "ACEL.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "ACEL.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "V SEG.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "V SEG.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "V SEG.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "V SEG.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "MANIOBRABILIDAD.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "MANIOBRABILIDAD.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "MANIOBRABILIDAD.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "MANIOBRABILIDAD.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "ESTRUCTURA.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "ESTRUCTURA.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "ESTRUCTURA.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "ESTRUCTURA.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE ARMA.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE ARMA.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE ARMA.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE ARMA.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE ARMA.4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE ARMA.5",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE ARMA.6",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE ARMA.7",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE ARMA.8",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "NOMBRE ARMA.9",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LETALIDAD.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LETALIDAD.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LETALIDAD.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LETALIDAD.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LETALIDAD.4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LETALIDAD.5",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LETALIDAD.6",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LETALIDAD.7",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LETALIDAD.8",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "LETALIDAD.9",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CARGADOR.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CARGADOR.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CARGADOR.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CARGADOR.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CARGADOR.4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CARGADOR.5",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CARGADOR.6",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CARGADOR.7",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CARGADOR.8",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "CARGADOR.9",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DPA.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DPA.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DPA.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DPA.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DPA.4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DPA.5",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DPA.6",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DPA.7",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DPA.8",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "DPA.9",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "TAMAÑO.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "TAMAÑO.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "TAMAÑO.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "TAMAÑO.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "TAMAÑO.4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "TAMAÑO.5",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "TAMAÑO.6",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "TAMAÑO.7",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "TAMAÑO.8",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "TAMAÑO.9",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RASGO.0",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RASGO.1",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RASGO.2",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RASGO.3",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RASGO.4",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RASGO.5",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RASGO.6",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RASGO.7",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RASGO.8",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RASGO.9",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "PO ACTUAL",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "BIOC",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "BIOE",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "PO",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "EQUIPO",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "BIOT",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "RESISTENCIA",
+    "type": "PDFTextField"
+  },
+  {
+    "name": "QUEMADURA.1",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.2",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.3",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.4",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.5",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.7",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.8",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.9",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.10",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.11",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.12",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.13",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.14",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.15",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.16",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "QUEMADURA.6",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.5",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.6",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.7",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.8",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.9",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.10",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.11",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.12",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.13",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.14",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.15.0",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.15.1",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.0",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.1",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.2",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.3",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "RES.4",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "HERIDO 1",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "HERIDO 2",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "HERIDO 3",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "HERIDO 4",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "HERIDO 5",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "MALHERIDO 1",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "MALHERIDO 3",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "BIOCON.0",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "BIOCON.1",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "BIOCON.2",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "BIOCON.3",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "BIOCON.4",
+    "type": "PDFCheckBox"
+  },
+  {
+    "name": "MALHERIDO 2",
+    "type": "PDFCheckBox"
+  }
+]

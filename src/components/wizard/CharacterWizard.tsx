@@ -9,6 +9,7 @@ import { Step3_Specializations } from './steps/Step3_Specializations';
 import { Step4_Advantages } from './steps/Step4_Advantages';
 import { Step5_Fractals } from './steps/Step5_Fractals';
 import { Step6_Details } from './steps/Step6_Details';
+import { exportCharacterToPDF } from '../../utils/pdfExport';
 import './CharacterWizard.css';
 
 // Placeholder for Steps until Step 5 is implemented
@@ -251,6 +252,10 @@ const CharacterWizardCore = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
         e.target.value = '';
     };
 
+    const handlePDFExport = () => {
+        exportCharacterToPDF(characterData, calc);
+    };
+
     const currentStepConfig = STEPS[currentStepIndex];
 
     return (
@@ -269,6 +274,9 @@ const CharacterWizardCore = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
                     </label>
                     <button className="wizard-btn" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }} onClick={handleExport}>
                         EXPORTAR JSON
+                    </button>
+                    <button className="wizard-btn primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }} onClick={handlePDFExport}>
+                        EXPORTAR PDF
                     </button>
                     <button className="wizard-close-btn" onClick={() => setIsOpen(false)}>
                         Cerrar [ESC]
