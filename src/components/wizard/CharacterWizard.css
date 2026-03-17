@@ -12,6 +12,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background: var(--wizard-bg);
   z-index: 10000;
   display: flex;
@@ -138,6 +139,7 @@
 @media (max-width: 768px) {
   .wizard-footer {
     padding: 1rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
     justify-content: center;
   }
 
